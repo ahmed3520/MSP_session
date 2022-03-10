@@ -3,8 +3,8 @@
 //arrays are zero based
 
 //common operations
-//create a new array
-let fruits = ['Apple', 'Banana','Orange'];
+//create a new arrayd
+let fruits = ['Apple', 'Banana'];
 
 console.log(fruits.length)
 
@@ -18,6 +18,7 @@ let last = fruits[fruits.length - 1]
 
 //loop over array
 
+
 fruits.forEach(function(item, index, array) {
     console.log(item, index)
   })
@@ -26,6 +27,7 @@ fruits.forEach(function(item, index, array) {
   
 //add an item to the end of an array
 fruits.push('Orange')
+const len = array.push('val')
 // ["Apple", "Banana", "Orange"]
 
 //Remove an item from the end of an Array
@@ -65,8 +67,8 @@ splice(start, deleteCount, item1, item2, itemN)
 //If you do not specify any elements, splice() will only remove elements from the array.
 
 //Remove 0 (zero) elements before index 2, and insert "drum"
-let myFish = ['angel', 'clown', 'mandarin', 'sturgeon']
-let removed = myFish.splice(2, 0, 'drum')
+let myFish = ['angel',          'clown',             'mandarin', 'sturgeon']
+let removed = myFish.splice(1, 0, 'drum')
 
 // myFish is ["angel", "clown", "drum", "mandarin", "sturgeon"]
 // removed is [], no elements removed
@@ -79,14 +81,14 @@ let removed = myFish.splice(2, 0, 'drum', 'guitar')
 // removed is [], no elements removed
 
 //Remove 1 element at index 3
-let myFish = ['angel', 'clown', 'drum', 'mandarin', 'sturgeon']
-let removed = myFish.splice(3, 1)
+let myFish = ['angel', 'clown', 'drum', ]
+let removed = myFish.splice(3)
 
 // myFish is ["angel", "clown", "drum", "sturgeon"]
 // removed is ["mandarin"]
 
 //Remove 1 element at index 2, and insert "trumpet"
-let myFish = ['angel', 'clown', 'drum', 'sturgeon']
+let myFish = ['angel', 'clown',        'drum', 'sturgeon']
 let removed = myFish.splice(2, 1, 'trumpet')
 
 // myFish is ["angel", "clown", "trumpet", "sturgeon"]
@@ -142,12 +144,12 @@ const citrus = fruits.slice(1, 3);
 //citrus is ["Orange", "Lemon"]
 
 //loop in JS
-//Loops offer a quick and easy way to do something repeatedly. 
+//Loops offer a quick and easy way to do something repeatedly.
 //loop as a computerized version of the game where you tell someone to take X steps in one direction, 
 //then Y steps in another. For example, the idea "Go five steps to the east" could be expressed this way as a loop.
 for (let step = 5; step  >0; --step) {
     // Runs 5 times, with values of step 0 through 4.
-    fruits[step];
+    fruits[step]; 
     console.log('Walking east one step');
   }
 //[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
@@ -216,22 +218,19 @@ let person = {
     //it's better to not use for in loop for arrays 
     //The index order is implementation-dependent, and array values may not be accessed in the order you expect.
     //It is better to use a for loop, a for of loop, or Array.forEach() when the order is important.
-   
+    function processUserInput(callback) {
+        var name = prompt('Please enter your name.');
+        callback(name);
+      }
+    
     //callback function: A callback function is a function passed into another function as an argument,
     // which is then invoked inside the outer function to complete some kind of routine or action.
    //example:
  
-   function greeting(name) {
+   function print(name) {
     alert('Hello ' + name);
   }
-   
-  function processUserInput(mooo) {
-    var name = prompt('Please enter your name.');
-    mooo(item,index,array);
-  }
-  
-  processUserInput(greeting);
-
+ processUserInput(greeting);
     //foreach loop
     //The forEach() method executes a provided function once for each array element.
     //foreEach() take a callback function as an argument
@@ -315,11 +314,13 @@ for (var prop in person) {
 //when we use dot notation?
 //use dot notation when you need to access a property and none of the above applies to the object property name (it's cleaner to use dot notation)
 
+arraz = [1,2,3,4,5];	
 //1-problem
 const playerOne = {
     name: "John",
     score: 5,
-    wins: 0
+    wins: 0,
+
 };
 
 const playerTwo = {
